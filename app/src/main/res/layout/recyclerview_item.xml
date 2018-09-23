@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/book"
+        android:layout_width="90dp"
+        android:layout_height="130dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/book1" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@id/book"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/book"
+        android:text="온 여름을 이 하루에"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/author"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/book"
+        android:layout_marginLeft="16dp"
+        android:layout_below="@id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="레이 브래드버리 지음"
+        android:textSize="13sp"/>
+
+    <RatingBar
+        android:id="@+id/rate"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_alignBottom="@+id/book"
+        android:layout_alignStart="@+id/title"
+        android:numStars="5"
+        android:rating="0"
+        android:stepSize="0.5" />
+
+</RelativeLayout>
