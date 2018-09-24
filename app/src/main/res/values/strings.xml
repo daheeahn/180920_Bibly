@@ -6,4 +6,8 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="tab_fragment_2_button_4_text">읽은날짜</string>
+    <string name="tab_fragment_2_button_3_text">코멘트</string>
+    <string name="tab_fragment_2_button_2_text">별점</string>
+    <string name="tab_fragment_2_button_1_text">전체도서</string>
 </resources>

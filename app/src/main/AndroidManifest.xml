@@ -19,7 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Main2Activity"></activity>
+        <activity android:name=".Main2Activity" />
+        <activity android:name=".TabFragment2_button1" />
+        <activity android:name=".TabFragment2_button2" />
+        <activity android:name=".TabFragment2_button3" />
+        <activity android:name=".TabFragment2_button4"></activity>
     </application>
 
 </manifest>

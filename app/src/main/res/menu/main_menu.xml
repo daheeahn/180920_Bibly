@@ -14,4 +14,9 @@
         android:id="@+id/action_email"
         android:icon="@drawable/ic_email"
         android:title="Email" />
+
+    <item
+        android:id="@+id/action_camera"
+        android:icon="@drawable/ic_menu_camera"
+        android:title="Camera" />
 </menu>

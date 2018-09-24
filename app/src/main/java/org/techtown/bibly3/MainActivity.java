@@ -1,8 +1,10 @@
 package org.techtown.bibly3;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.RequiresApi;
 import android.support.design.internal.NavigationMenu;
 import android.support.design.widget.FloatingActionButton;
@@ -15,6 +17,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Layout;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -25,10 +28,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import io.github.yavski.fabspeeddial.FabSpeedDial;
 
 public class MainActivity extends AppCompatActivity
@@ -81,6 +88,9 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        ButterKnife.bind(this);
+
+
         //recyclerview
         //이 코드 대신 TabFragment4.java에 있는 코드 쓰니까 됐음!!!
 //        RecyclerView view = (RecyclerView) findViewById(R.id.main_recyclerview);
@@ -101,6 +111,16 @@ public class MainActivity extends AppCompatActivity
             @Override
             public boolean onMenuItemSelected(MenuItem menuItem) {
                 Toast.makeText(MainActivity.this, "" + menuItem.getTitle(), Toast.LENGTH_SHORT).show();
+                switch(menuItem.getItemId()) {
+                    case R.id.action_camera:
+                        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE); //camera 실행
+                        startActivity(intent);
+                        break;
+                    case R.id.action_call:
+                    case R.id.action_email:
+                    case R.id.action_text:
+                        break;
+                }
                 return true;
             }
 
@@ -108,6 +128,8 @@ public class MainActivity extends AppCompatActivity
             public void onMenuClosed() {
 
             }
+
+
         });
 
 
@@ -151,9 +173,9 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-
-
     }
+
+
 
     @Override
     public void onBackPressed() {

@@ -1,10 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<!--<ScrollView
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent">-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#be74e3">
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+            <!-- profile -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="36dp"
+                        android:layout_marginStart="36dp"
+                        android:layout_marginTop="36dp"
+                        android:src="@drawable/baseline_person_black_18dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="36dp"
+                        android:text="안다희"
+                        app:layout_constraintStart_toEndOf="@+id/imageView2"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp"
+                        android:text="팔로워0 · 팔로잉0"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toEndOf="@+id/imageView2"
+                        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="36dp"
+                        android:layout_marginStart="36dp"
+                        android:layout_marginTop="20dp"
+                        android:text="간단한 자기소개"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
 
+                </android.support.constraint.ConstraintLayout>
 
-</FrameLayout>
+            </LinearLayout>
+
+            <!-- 4개 버튼 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3">
+
+                <!-- 1) 전체도서 -->
+                <Button
+                    android:id="@+id/tab_fragment_2_button_1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/press"
+                    android:text="9\n전체도서">
+
+                </Button>
+
+                <!-- 2) 별점 -->
+                <Button
+                    android:id="@+id/tab_fragment_2_button_2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/press"
+                    android:text="3\n별점">
+
+                </Button>
+
+                <!-- 3) 코멘트 -->
+                <Button
+                    android:id="@+id/tab_fragment_2_button_3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/press"
+                    android:text="0\n코멘트">
+
+
+                </Button>
+
+                <!-- 4) 읽은날짜 -->
+                <Button
+                    android:id="@+id/tab_fragment_2_button_4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/press"
+                    android:text="0\n읽은날짜">
+
+
+                </Button>
+
+            </LinearLayout>
+
+            <!-- 회색 바탕 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#efebeb">
+
+            </LinearLayout>
+
+            <!-- 탭 2개 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="10"
+                android:orientation="vertical">
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/person_tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                </android.support.design.widget.TabLayout>
+
+                <FrameLayout
+                    android:id="@+id/person_tab_frame"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+</LinearLayout>
+<!--</ScrollView>-->
