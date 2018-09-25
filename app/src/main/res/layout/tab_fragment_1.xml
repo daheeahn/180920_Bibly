@@ -3,20 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@android:color/holo_purple"
     android:orientation="vertical">
 
-    <!--<io.github.yavski.fabspeeddial.FabSpeedDial-->
-        <!--android:id="@+id/fabSpeedDial"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="bottom|end"-->
-        <!--app:fabDrawableTint="?attr/colorPrimaryDark"-->
-        <!--app:fabGravity="bottom_end"-->
-        <!--app:fabMenu="@menu/main_menu"-->
-        <!--app:miniFabBackgroundTint="@android:color/white"-->
-        <!--app:miniFabTitleTextColor="?attr/colorPrimaryDark">-->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="138dp"
+        android:layout_margin="20dp">
 
-    <!--</io.github.yavski.fabspeeddial.FabSpeedDial>-->
+
+    </android.support.v4.view.ViewPager>
+
 
 </FrameLayout>

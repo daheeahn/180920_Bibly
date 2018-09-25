@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private ViewPager mViewPager;
+    private BackPressCloseHandler backPressCloseHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +90,9 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         ButterKnife.bind(this);
+
+        //back button press
+        backPressCloseHandler = new BackPressCloseHandler(this);
 
 
         //recyclerview
@@ -111,7 +115,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public boolean onMenuItemSelected(MenuItem menuItem) {
                 Toast.makeText(MainActivity.this, "" + menuItem.getTitle(), Toast.LENGTH_SHORT).show();
-                switch(menuItem.getItemId()) {
+                switch (menuItem.getItemId()) {
                     case R.id.action_camera:
                         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE); //camera 실행
                         startActivity(intent);
@@ -153,7 +157,7 @@ public class MainActivity extends AppCompatActivity
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-        final MainActivity.PagerAdapter adapter = new MainActivity.PagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
+        final MainActivity.PagerAdapter adapter = new MainActivity.PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -172,10 +176,7 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
-
     }
-
-
 
     @Override
     public void onBackPressed() {
@@ -183,7 +184,9 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            //super.onBackPressed();
+            //back button press 추가 코드
+            backPressCloseHandler.onBackPressed();
         }
     }
 
